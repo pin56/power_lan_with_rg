@@ -30,11 +30,11 @@ def run_udp_port_listener_time(port: int, interface_name: str):
 
     # Бесконечный цикл прослушивания
     while True:
-        print('start hearing')
+
         # Получаем данные из сокета
         data, _ = server_socket.recvfrom(1024)
         decoded_packet_data = '-'.join(f'{byte:02x}' for byte in data).upper() + '-'
-
+        print(data)
         return data, decoded_packet_data
 
 
