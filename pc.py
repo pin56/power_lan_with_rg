@@ -9,6 +9,7 @@ import time
 import json
 import threading
 from dotenv import load_dotenv
+from network import get_ip_mac_address
 
 load_dotenv()
 
@@ -26,41 +27,6 @@ TIME_PORT = 59681 # Порт для отправки времени
 logging.basicConfig(format='%(levelname)s: %(asctime)s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-
-def get_ip_mac_address(interface_name: str) -> tuple:
-    """
-    Получает IP и MAC адрес указанного сетевого интерфейса
-    
-    Args:
-        interface_name (str): Имя сетевого интерфейса
-        
-    Returns:
-        tuple: (ip_address, mac_address) - кортеж с IP и MAC адресами
-        
-    Raises:
-        Exception: Если не удалось получить адреса
-    """
-    ip_addr = mac_addr = None
-
-    # Перебираем все адреса указанного интерфейса
-    for item in psutil.net_if_addrs()[interface_name]:
-        addr = item.address
-
-        # В IPv4-адресах разделители - точки
-        if '.' in addr:
-            ip_addr = addr
-        # В MAC-адресах разделители либо тире, либо одинарное двоеточие.
-        # Двойное двоеточие - это разделители для адресов IPv6
-        elif ('-' in addr or ':' in addr) and '::' not in addr:
-            # Приводим MAC-адрес к одному формату. Формат может меняться в зависимости от ОС
-            mac_addr = addr.replace(':', '-').upper()
-
-    # Проверяем, что получили валидные адреса
-    if not ip_addr or not mac_addr or ip_addr == '127.0.0.1':
-        raise Exception('Не удалось получить IP или MAC-адрес сетевого интерфейса')
-
-    return ip_addr, mac_addr
 
 
 def assemble_off_packet(mac_address: str) -> str:
@@ -115,30 +81,6 @@ def check_is_wol_packet(raw_bytes: bytes, assembled_wol_packet: str) -> int:
         return 1
 
     return 0
-
-def run_udp_port_listener_time(port: int, interface_name: str):
-    """
-    Основная функция - слушает время, для отправки в сообщения
-    
-    Args:
-        port (int): UDP порт для прослушивания
-        interface_name (str): Имя сетевого интерфейса
-    """
-    # Получаем IP и MAC адрес интерфейса
-    ip_addr, mac_addr = get_ip_mac_address(interface_name)
-
-    # Создаем UDP сокет
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    server_socket.bind((ip_addr, port))
-    logger.info(f'Listening on {ip_addr}:{port}')
-
-    # Бесконечный цикл прослушивания
-    while True:
-        # Получаем данные из сокета
-        data, _ = server_socket.recvfrom(1024)
-        decoded_packet_data = '-'.join(f'{byte:02x}' for byte in data).upper() + '-'
-
-        return data, decoded_packet_data
 
 def run_udp_port_listener_lan(port: int, interface_name: str):
     """
