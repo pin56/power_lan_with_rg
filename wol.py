@@ -9,7 +9,6 @@ def send_wol(mac_address: str, broadcast_ip: str = "192.168.50.255"):
     # Создание magic packet
     mac_bytes = bytes.fromhex(mac_address)
     magic_packet = b'\xff' * 6 + mac_bytes * 16
-    print(magic_packet)
     # Отправка UDP broadcast
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -61,6 +60,18 @@ def send_sleep(mac_address: str, broadcast_ip: str = "192.168.50.255"):
 
 
 if __name__ == "__main__":
-    send_wol("00:D8:61:33:5E:65", "192.168.50.255")
-    send_off("00:D8:61:33:5E:65", "192.168.50.255")
-    send_sleep("00:D8:61:33:5E:65", "192.168.50.255")
+    while True:
+        print('Выберите пункт меню:')
+        print('1. Включение ПК')
+        print('2. Перевод в сон')
+        print('3. Выключение ПК')
+        while True:
+            inp = int(input())
+            if inp == 1:
+                send_wol('00:D8:61:33:5E:65', "192.168.50.255")
+            elif inp == 2:
+                send_sleep('00:D8:61:33:5E:65', "192.168.50.255")
+            elif inp == 3:
+                send_off('00:D8:61:33:5E:65', "192.168.50.255")
+            else: 
+                break
