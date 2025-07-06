@@ -19,12 +19,13 @@ BROADCAST_IP = os.getenv("BROADCAST_IP")
 
 # Константы
 WOL_PORT = 9  # Стандартный порт для Wake-on-LAN
-INTERFACE_NAME = 'Ethernet'  # Имя сетевого интерфейса для мониторинга
+INTERFACE_NAME = 'en0'  # Имя сетевого интерфейса для мониторинга
 TIME_PORT = 59681 # Порт для отправки времени
 
 # Настройка логирования
 logging.basicConfig(format='%(levelname)s: %(asctime)s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 
 def get_ip_mac_address(interface_name: str) -> tuple:
@@ -79,7 +80,6 @@ def assemble_off_packet(mac_address: str) -> str:
     return f'{"00-" * 6}{(mac_address + "-") * 16}'
 
 
-
 def assemble_sleep_packet(mac_address: str) -> str:
     """
     Собирает строку Wake-on-LAN пакета для сравнения
@@ -116,8 +116,31 @@ def check_is_wol_packet(raw_bytes: bytes, assembled_wol_packet: str) -> int:
 
     return 0
 
+def run_udp_port_listener_time(port: int, interface_name: str):
+    """
+    Основная функция - слушает время, для отправки в сообщения
+    
+    Args:
+        port (int): UDP порт для прослушивания
+        interface_name (str): Имя сетевого интерфейса
+    """
+    # Получаем IP и MAC адрес интерфейса
+    ip_addr, mac_addr = get_ip_mac_address(interface_name)
 
-def run_udp_port_listener(port: int, interface_name: str):
+    # Создаем UDP сокет
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    server_socket.bind((ip_addr, port))
+    logger.info(f'Listening on {ip_addr}:{port}')
+
+    # Бесконечный цикл прослушивания
+    while True:
+        # Получаем данные из сокета
+        data, _ = server_socket.recvfrom(1024)
+        decoded_packet_data = '-'.join(f'{byte:02x}' for byte in data).upper() + '-'
+
+        return data, decoded_packet_data
+
+def run_udp_port_listener_lan(port: int, interface_name: str):
     """
     Основная функция - слушает UDP порт и выключает компьютер при получении WoL пакета
     
@@ -145,7 +168,6 @@ def run_udp_port_listener(port: int, interface_name: str):
         # Проверяем, является ли пакет WoL пакетом
         is_wol_packet = check_is_wol_packet(data, assembled_off_packet)
         is_sleep_packet = check_is_wol_packet(data, assembled_sleep_packet)
-
         # Если это WoL пакет - выключаем компьютер или засыпаем
         if is_sleep_packet == 1:
             if os.name == 'posix':  # Linux/Unix системы
@@ -157,6 +179,8 @@ def run_udp_port_listener(port: int, interface_name: str):
                 os.system('sudo shutdown -h now')
             elif os.name == 'nt':   # Windows системы
                 os.system('shutdown -s -t 0 -f')
+
+
 
 def get_system_uptime() -> dict:
     """
@@ -222,7 +246,7 @@ def send_uptime_command():
     
     send_time_to_server(SERVER_MAC_ADDRESS, BROADCAST_IP, TIME_PORT)
 
-def send_uptime_periodically(interval_seconds: int = 3):
+def send_uptime_periodically(interval_seconds: int = 5):
     """
     Периодически отправляет время работы системы
     
@@ -243,10 +267,12 @@ def main():
     time_thread.start()
     
     # Запускаем основной цикл прослушивания WoL пакетов
-    run_udp_port_listener(WOL_PORT, INTERFACE_NAME)
+    run_udp_port_listener_lan(WOL_PORT, INTERFACE_NAME)
 
 # Запуск основного цикла прослушивания
 if __name__ == '__main__':
+    print(SERVER_MAC_ADDRESS, BROADCAST_IP)
+
     main()
 
 
