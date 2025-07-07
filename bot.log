@@ -1,0 +1,63 @@
+2025-07-07 09:46:26,154 [INFO] Разрешенные пользователи: [554164909]
+2025-07-07 09:46:26,179 [INFO] Бот Telegram инициализирован
+2025-07-07 09:46:26,493 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getMe "HTTP/1.1 200 OK"
+2025-07-07 09:46:26,555 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-07 09:46:26,556 [INFO] Application started
+2025-07-07 09:46:30,576 [INFO] ПК включился. Статус обновлен: 🚀 Включен
+2025-07-07 09:46:36,896 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:46:46,972 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:46:57,044 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:03,456 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:03,457 [INFO] Пользователь 554164909 нажал кнопку: sleep
+2025-07-07 09:47:03,911 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-07-07 09:47:03,912 [INFO] Отправлен сигнал сна для ПК 00:D8:61:33:5E:65
+2025-07-07 09:47:05,582 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/editMessageText "HTTP/1.1 200 OK"
+2025-07-07 09:47:10,629 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/editMessageText "HTTP/1.1 200 OK"
+2025-07-07 09:47:13,541 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:20,525 [INFO] ПК выключен по таймауту. Статус обновлен: ⚫️ Выключен
+2025-07-07 09:47:20,886 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/sendMessage "HTTP/1.1 200 OK"
+2025-07-07 09:47:20,888 [INFO] Пользователь 554164909 уведомлен о выключении ПК
+2025-07-07 09:47:23,636 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:33,760 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:43,833 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:47:53,932 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:04,011 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:14,085 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:24,248 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:34,387 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:44,527 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:48:54,603 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:04,677 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:14,841 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:24,915 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:35,012 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:45,086 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:49:55,186 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:05,263 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:15,336 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:25,414 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:35,531 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:45,614 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:50:55,685 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:05,759 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:15,834 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:25,909 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:35,987 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:46,071 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:51:56,145 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:06,220 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:16,295 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:26,371 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:36,445 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:46,527 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:52:56,639 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:06,712 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:16,786 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:26,858 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:36,934 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:40,513 [INFO] HTTP Request: POST https://api.telegram.org/bot7034367162:AAEC3AK3_okjLNQNdwV1a1XINBPl-y4S3kM/getUpdates "HTTP/1.1 200 OK"
+2025-07-07 09:53:40,514 [INFO] Application is stopping. This might take a moment.
+2025-07-07 09:53:40,515 [INFO] Application.stop() complete
+2025-07-07 09:53:40,516 [INFO] Бот Telegram запущен (polling)
+2025-07-07 09:53:46,336 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-7' coro=<Application.__create_task_callback() running at /Users/nikitapodluznov/Documents/GitHub/power_lan_with_rg/.venv/lib/python3.10/site-packages/telegram/ext/_application.py:1175> wait_for=<Future pending cb=[Task.task_wakeup()]>>
