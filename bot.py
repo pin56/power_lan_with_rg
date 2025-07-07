@@ -15,6 +15,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Отключаем логирование HTTP запросов от python-telegram-bot и httpx/urllib3
+for noisy_logger in [
+    'httpx',
+    'telegram.vendor.ptb_urllib3.urllib3.connectionpool',
+    'telegram.ext._application',
+    'telegram.bot',
+    'apscheduler',
+]:
+    logging.getLogger(noisy_logger).setLevel(logging.WARNING)
+
 from wol import send_wol, send_off, send_sleep
 from telegram import InlineKeyboardButton, Update, InlineKeyboardMarkup
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes
