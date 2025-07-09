@@ -7,13 +7,13 @@ from network import get_ip_mac_address
 load_dotenv()
 
 PORT = os.getenv('PORT')
-ETHERNET = os.getenv('ETHERNET')
+INTERFACE = os.getenv('INTERFACE')
 
 if PORT is None:
     raise ValueError('PORT environment variable is not set')
 PORT = int(PORT)
 
-def run_udp_port_listener_time(port: int, interface_name: str):
+async def run_udp_port_listener_time(port: int, interface_name: str):
     """
     Основная функция - слушает время, для отправки в сообщения
     
@@ -27,7 +27,7 @@ def run_udp_port_listener_time(port: int, interface_name: str):
     # Создаем UDP сокет
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     server_socket.bind(('', port))
-
+    print(1)
     # Бесконечный цикл прослушивания
     while True:
 
@@ -39,6 +39,10 @@ def run_udp_port_listener_time(port: int, interface_name: str):
 
 
 if __name__ == '__main__':
-    while True:
-        data, _ = run_udp_port_listener_time(PORT, ETHERNET)
-        print(data)
+    print(INTERFACE)
+    import asyncio
+    async def main():
+        while True:
+            data, _ = await run_udp_port_listener_time(PORT, INTERFACE)
+            print(data)
+    asyncio.run(main())

@@ -1,5 +1,10 @@
-from pc import run_udp_port_listener_time
+import asyncio
+
+async def limited_worker(times):
+    for i in range(times):
+        print(f"Итерация {i+1}")
+        await asyncio.sleep(3)
+    print("Готово!")
 
 while True:
-    data, _ = run_udp_port_listener_time(59681, 'en0')
-    print(data)
+    asyncio.run(limited_worker(5))
