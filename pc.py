@@ -15,12 +15,12 @@ load_dotenv()
 
 SERVER_MAC_ADDRESS = os.getenv("SERVER_MAC_ADDRESS")
 BROADCAST_IP = os.getenv("BROADCAST_IP")
-
+INTERFACE_NAME = os.getenv("INTERFACE_NAME")  # Имя сетевого интерфейса для мониторинга
 
 
 # Константы
 WOL_PORT = 9  # Стандартный порт для Wake-on-LAN
-INTERFACE_NAME = 'en0'  # Имя сетевого интерфейса для мониторинга
+
 TIME_PORT = 59681 # Порт для отправки времени
 
 # Настройка логирования
@@ -173,7 +173,7 @@ def send_time_to_server(mac_address: str, broadcast_ip: str = "192.168.50.255", 
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             sock.sendto(time_message.encode('utf-8'), (broadcast_ip, port))
             
-        logger.info(f"Отправлено время работы системы: {uptime_data['formatted_uptime']}")
+        logger.info(f"Отправлено время работы системы: {uptime_data['formatted_uptime']} по адресу {broadcast_ip}:{port} с MAC-адресом {mac_address}")
         
     except Exception as e:
         logger.error(f"Ошибка при отправке времени: {e}")
