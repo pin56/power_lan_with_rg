@@ -1,8 +1,2 @@
-
 *.log
-
-!.env.example
-
 .env
-
-git add .env.example
